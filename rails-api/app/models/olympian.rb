@@ -6,4 +6,9 @@ class Olympian < ApplicationRecord
     self.height = height == 0 ? nil : height
     self.weight = weight == 0 ? nil : weight
   end
+
+  def self.index
+    data = select(:id, :name, :sex, :age, :height, :weight)
+    return { olympians: data }
+  end
 end
