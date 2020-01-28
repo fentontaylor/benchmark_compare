@@ -3,9 +3,20 @@ namespace :import do
 
   require 'csv'
 
-  task olympians: :environment do
+  task data: :environment do
+    ActiveRecord::Base.connection.execute(
+      "TRUNCATE TABLE olympians RESTART IDENTITY;"
+    )
     CSV.foreach('../data/data.csv', headers: true) do |row|
-      puts(row)
+      row = row.to_h
+      olympian = Olympian.find_or_create_by(
+        name:   row['name'],
+        sex:    row['sex'],
+        age:    row['age'],
+        height: row['height'],
+        weight: row['weight'],
+      )
+      puts "Processing: <Olympian: name='#{olympian.name}', sex='#{olympian.sex}'...>"
     end
   end
 end
