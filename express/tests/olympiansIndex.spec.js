@@ -1,7 +1,5 @@
-const env = process.env.NODE_ENV || 'development';
-const config = require('../knexfile')[env];
-const DB = require('knex')(config);
 const request = require("supertest");
+const DB = require('../utils/dbConnect')
 const app = require('../app')
 
 
@@ -24,11 +22,11 @@ describe('api/v1/olympians', () => {
       .returning('*')
     
     const expected = {
-      olympians: [ oly1, oly2 ]
+      olympians: [ oly1[0], oly2[0] ]
     }
 
     const response = await request(app).get('/api/v1/olympians')
-    console.log(response.body)
+
     expect(response.status).toBe(200);
     expect(response.body).toEqual(expected);
   })
