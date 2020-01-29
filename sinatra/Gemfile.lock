@@ -1,9 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    json (2.3.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    rack (2.1.1)
+    rack (2.1.2)
     rack-protection (2.0.8.1)
       rack
     ruby2_keywords (0.0.2)
@@ -18,6 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
   sinatra
 
 BUNDLED WITH
