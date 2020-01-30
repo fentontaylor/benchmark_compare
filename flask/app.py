@@ -3,27 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_marshmallow import Marshmallow
 
-
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-
-class Olympian(db.Model):
-    __tablename__ = 'olympians'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64))
-    sex = db.Column(db.String(2))
-    age = db.Column(db.Integer, nullable=True)
-    height = db.Column(db.Integer, nullable=True)
-    weight = db.Column(db.Integer, nullable=True)
-
-
-class OlympianSchema(ma.ModelSchema):
-    class Meta:
-        model = Olympian
-        sqla_session = db.session
+from models import Olympian, OlympianSchema
 
 
 @app.route('/')
