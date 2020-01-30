@@ -300,4 +300,39 @@ Percentage of the requests served within a certain time (ms)
   98%    205
   99%    216
  100%    396 (longest request)
- ```
+```
+
+#### Flask
+```
+Document Path:          /api/v1/olympians
+Document Length:        243070 bytes
+
+Concurrency Level:      1
+Time taken for tests:   987.431 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2432200000 bytes
+HTML transferred:       2430700000 bytes
+Requests per second:    10.13 [#/sec] (mean)
+Time per request:       98.743 [ms] (mean)
+Time per request:       98.743 [ms] (mean, across all concurrent requests)
+Transfer rate:          2405.43 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       7
+Processing:    85   99  15.3     93     535
+Waiting:       85   98  15.2     92     535
+Total:         85   99  15.3     93     535
+
+Percentage of the requests served within a certain time (ms)
+  50%     93
+  66%    102
+  75%    105
+  80%    106
+  90%    111
+  95%    120
+  98%    131
+  99%    141
+ 100%    535 (longest request)
+``` 
