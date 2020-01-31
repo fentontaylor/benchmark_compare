@@ -17,7 +17,7 @@ $ rake import:data
 ```
 
 ## Performance Comparison
-Each API has two endpoints, one that returns a simple 'Hello, World!' and one that returns a large index of Olympians from a database.
+Each API has two endpoints, one that returns a simple 'Hello, World!' and one that returns a large index of Olympians from a database. In the initial phase of this project, no projects or libraries have been used to boost the performance of the APIs. These results are simply 'out-of-the-box' preformance.
 
 ### Hello World Endpoint
 Each API's root path returns the simple JSON response:
@@ -26,7 +26,7 @@ Each API's root path returns the simple JSON response:
   "message": "Hello, World!"
 }
 ```
-The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). Here are the results from best to worst.
+The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/`. Here are the results from best to worst.
 
 #### 1. Express
 ```
@@ -207,7 +207,7 @@ Percentage of the requests served within a certain time (ms)
  
  
 ### /api/v1/olympians Endpoint
-The path /api/v1/olympians returns an index of all 2863 Olympians from a PostgreSQL database in the following format:
+The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/api/v1/olympians`. The path /api/v1/olympians returns an index of all 2863 Olympians from a PostgreSQL database in the following format:
 ```
 {
     "olympians": [
