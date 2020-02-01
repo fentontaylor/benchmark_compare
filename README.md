@@ -28,7 +28,7 @@ Each API's root path returns the simple JSON response:
 ```
 The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/`. Here are the results from best to worst.
 
-#### 1. Express
+#### 1a. Express
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -61,6 +61,42 @@ Percentage of the requests served within a certain time (ms)
   98%      1
   99%      1
  100%    137 (longest request)
+```
+
+#### 1b. Express with GraphQL
+```
+Document Path:          /api/v2/graphql?query=query{message}
+Document Length:        36 bytes
+
+Concurrency Level:      1
+Time taken for tests:   5.287 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2430000 bytes
+HTML transferred:       360000 bytes
+Requests per second:    1891.57 [#/sec] (mean)
+Time per request:       0.529 [ms] (mean)
+Time per request:       0.529 [ms] (mean, across all concurrent requests)
+Transfer rate:          448.88 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       3
+Processing:     0    0   0.5      0      44
+Waiting:        0    0   0.5      0      42
+Total:          0    0   0.5      0      44
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      2
+ 100%     44 (longest request)
+
 ```
 
 #### 2. Sinatra
