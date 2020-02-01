@@ -65,38 +65,38 @@ Percentage of the requests served within a certain time (ms)
 
 #### 1b. Express with GraphQL
 ```
-Document Path:          /api/v2/graphql?query=query{message}
-Document Length:        36 bytes
+Document Path:          /api/v2/graphql?query=query%7Cmessage%7D
+Document Length:        96 bytes
 
 Concurrency Level:      1
-Time taken for tests:   5.287 seconds
+Time taken for tests:   4.861 seconds
 Complete requests:      10000
 Failed requests:        0
-Total transferred:      2430000 bytes
-HTML transferred:       360000 bytes
-Requests per second:    1891.57 [#/sec] (mean)
-Time per request:       0.529 [ms] (mean)
-Time per request:       0.529 [ms] (mean, across all concurrent requests)
-Transfer rate:          448.88 [Kbytes/sec] received
+Non-2xx responses:      10000
+Total transferred:      3120000 bytes
+HTML transferred:       960000 bytes
+Requests per second:    2057.14 [#/sec] (mean)
+Time per request:       0.486 [ms] (mean)
+Time per request:       0.486 [ms] (mean, across all concurrent requests)
+Transfer rate:          626.79 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       3
-Processing:     0    0   0.5      0      44
-Waiting:        0    0   0.5      0      42
-Total:          0    0   0.5      0      44
+Connect:        0    0   0.3      0      26
+Processing:     0    0   0.4      0      28
+Waiting:        0    0   0.3      0      14
+Total:          0    0   0.5      0      28
 
 Percentage of the requests served within a certain time (ms)
   50%      0
   66%      0
-  75%      1
-  80%      1
+  75%      0
+  80%      0
   90%      1
   95%      1
   98%      1
-  99%      2
- 100%     44 (longest request)
-
+  99%      1
+ 100%     28 (longest request)
 ```
 
 #### 2. Sinatra
@@ -268,7 +268,7 @@ The apache benchmark tool was used to send 10,000 requests to the APIs with a co
 }
 ```
 
-#### Express
+#### 1a. Express
 ```
 Document Path:          /api/v1/olympians
 Document Length:        248795 bytes
@@ -301,6 +301,41 @@ Percentage of the requests served within a certain time (ms)
   98%     17
   99%     25
  100%    189 (longest request)
+ ```
+
+ #### 1b. Express with GraphQL
+ ```
+Document Path:          /api/v2/graphql?query=query{olympians{id name sex age height weight}}
+Document Length:        248804 bytes
+
+Concurrency Level:      1
+Time taken for tests:   303.175 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2490180000 bytes
+HTML transferred:       2488040000 bytes
+Requests per second:    32.98 [#/sec] (mean)
+Time per request:       30.317 [ms] (mean)
+Time per request:       30.317 [ms] (mean, across all concurrent requests)
+Transfer rate:          8021.18 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.2      0       7
+Processing:    25   30   5.9     28     143
+Waiting:       25   30   5.9     28     142
+Total:         26   30   6.0     28     143
+
+Percentage of the requests served within a certain time (ms)
+  50%     28
+  66%     29
+  75%     31
+  80%     34
+  90%     38
+  95%     40
+  98%     46
+  99%     51
+ 100%    143 (longest request)
  ```
  
  #### Rails API

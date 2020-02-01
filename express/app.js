@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/v1/olympians', (req, res) => {
   Olympian.index()
-    .then(data => res.status(200).send(data))
+    .then(data => res.status(200).send({ olympians: data }))
     .catch(err => err)
 })
 
