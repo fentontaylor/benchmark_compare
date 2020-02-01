@@ -65,38 +65,37 @@ Percentage of the requests served within a certain time (ms)
 
 #### 1b. Express with GraphQL
 ```
-Document Path:          /api/v2/graphql?query=query%7Cmessage%7D
-Document Length:        96 bytes
+Document Path:          /api/v2/graphql?query=query%7Bmessage%7D
+Document Length:        36 bytes
 
 Concurrency Level:      1
-Time taken for tests:   4.861 seconds
+Time taken for tests:   5.339 seconds
 Complete requests:      10000
 Failed requests:        0
-Non-2xx responses:      10000
-Total transferred:      3120000 bytes
-HTML transferred:       960000 bytes
-Requests per second:    2057.14 [#/sec] (mean)
-Time per request:       0.486 [ms] (mean)
-Time per request:       0.486 [ms] (mean, across all concurrent requests)
-Transfer rate:          626.79 [Kbytes/sec] received
+Total transferred:      2430000 bytes
+HTML transferred:       360000 bytes
+Requests per second:    1873.06 [#/sec] (mean)
+Time per request:       0.534 [ms] (mean)
+Time per request:       0.534 [ms] (mean, across all concurrent requests)
+Transfer rate:          444.49 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0      26
-Processing:     0    0   0.4      0      28
-Waiting:        0    0   0.3      0      14
-Total:          0    0   0.5      0      28
+Connect:        0    0   0.1      0       2
+Processing:     0    0   0.4      0      19
+Waiting:        0    0   0.4      0      19
+Total:          0    0   0.4      0      19
 
 Percentage of the requests served within a certain time (ms)
   50%      0
   66%      0
-  75%      0
-  80%      0
+  75%      1
+  80%      1
   90%      1
   95%      1
   98%      1
-  99%      1
- 100%     28 (longest request)
+  99%      2
+ 100%     19 (longest request)
 ```
 
 #### 2. Sinatra
@@ -305,7 +304,7 @@ Percentage of the requests served within a certain time (ms)
 
  #### 1b. Express with GraphQL
  ```
-Document Path:          /api/v2/graphql?query=query{olympians{id name sex age height weight}}
+Document Path:          /api/v2/graphql?query=query%7Bolympians%7Bid%20name%20sex%20age%20height%20weight%7D%7D
 Document Length:        248804 bytes
 
 Concurrency Level:      1
