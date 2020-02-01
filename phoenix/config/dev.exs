@@ -4,7 +4,7 @@ use Mix.Config
 config :phoenix_benchmark, PhoenixBenchmark.Repo,
   username: "postgres",
   password: "postgres",
-  database: "phoenix_benchmark_dev",
+  database: "benchmark_compare_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
