@@ -5,7 +5,9 @@ defmodule PhoenixBenchmarkWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PhoenixBenchmarkWeb do
-    pipe_through :api
+  scope "/", PhoenixBenchmarkWeb do
+		pipe_through :api
+		get "/", BenchmarkController, :welcome
+		# get "/olympians", BenchmarkController, :olympians
   end
 end
