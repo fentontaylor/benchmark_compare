@@ -7,6 +7,7 @@ defmodule PhoenixBenchmarkWeb.Router do
 
   scope "/", PhoenixBenchmarkWeb do
 		pipe_through :api
+
 		get "/", BenchmarkController, :welcome
 		# get "/olympians", BenchmarkController, :olympians
   end
