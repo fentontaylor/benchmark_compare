@@ -29,6 +29,9 @@ Each API's root path returns the simple JSON response:
 The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/`. Here are the results from best to worst.
 
 #### 1a. Express
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -62,8 +65,12 @@ Percentage of the requests served within a certain time (ms)
   99%      1
  100%    137 (longest request)
 ```
+</details>
 
 #### 1b. Express with GraphQL
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /api/v2/graphql?query=query%7Bmessage%7D
 Document Length:        36 bytes
@@ -97,8 +104,12 @@ Percentage of the requests served within a certain time (ms)
   99%      2
  100%     19 (longest request)
 ```
+</details>
 
 #### 2. Sinatra
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -134,8 +145,12 @@ Percentage of the requests served within a certain time (ms)
   99%      2
  100%     25 (longest request)
 ```
+</details>
 
 #### 3. Flask
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -169,8 +184,12 @@ Percentage of the requests served within a certain time (ms)
   99%      3
  100%    124 (longest request)
 ```
+</details>
 
 #### 4. Django
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -204,8 +223,12 @@ Percentage of the requests served within a certain time (ms)
   99%      5
  100%    260 (longest request)
 ```
+</details>
 
 #### 5. Rails API
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -239,6 +262,7 @@ Percentage of the requests served within a certain time (ms)
   99%      5
  100%    294 (longest request)
 ```
+</details>
  
  
 ### /api/v1/olympians Endpoint
@@ -268,6 +292,9 @@ The apache benchmark tool was used to send 10,000 requests to the APIs with a co
 ```
 
 #### 1a. Express
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /api/v1/olympians
 Document Length:        248795 bytes
@@ -301,8 +328,12 @@ Percentage of the requests served within a certain time (ms)
   99%     25
  100%    189 (longest request)
  ```
+ </details>
 
  #### 1b. Express with GraphQL
+ <details>
+  <summary>View Results</summary>
+  
  ```
 Document Path:          /api/v2/graphql?query=query%7Bolympians%7Bid%20name%20sex%20age%20height%20weight%7D%7D
 Document Length:        248804 bytes
@@ -336,8 +367,12 @@ Percentage of the requests served within a certain time (ms)
   99%     51
  100%    143 (longest request)
  ```
+ </details>
  
  #### Rails API
+ <details>
+  <summary>View Results</summary>
+  
  ```
  Document Path:          /api/v1/olympians
 Document Length:        243069 bytes
@@ -371,8 +406,12 @@ Percentage of the requests served within a certain time (ms)
   99%    216
  100%    396 (longest request)
 ```
+</details>
 
 #### Flask
+<details>
+  <summary>View Results</summary>
+  
 ```
 Document Path:          /api/v1/olympians
 Document Length:        243070 bytes
@@ -406,3 +445,5 @@ Percentage of the requests served within a certain time (ms)
   99%    141
  100%    535 (longest request)
 ``` 
+</details>
+
