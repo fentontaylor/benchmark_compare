@@ -1,7 +1,7 @@
 defmodule PhoenixBenchmarkWeb.BenchmarkController do
 	use PhoenixBenchmarkWeb, :controller
 
-	def welcome(conn, _params) do
-		render conn, "welcome.json", data: %{message: "Hello, World!"}
+	def root(conn, _params) do
+		render conn, "root.json", data: %{message: "Hello, World!"}
 	end
 end
