@@ -1,3 +1,4 @@
+from rest_framework import serializers
 from .models import Olympian
 
 class OlympiansSerializer(serializers.ModelSerializer):
