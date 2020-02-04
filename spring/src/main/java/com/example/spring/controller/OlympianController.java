@@ -15,8 +15,8 @@ public class OlympianController {
   @Autowired
   private OlympianRepository olympianRepository;
 
-  @GetMapping("/olympians")
-  public Page<Olympian> getOlympians(Pageable pageable) {
-    return olympianRepository.findAll(pageable);
+  @GetMapping("/api/v1/olympians")
+  public Page<Olympian> getOlympians() {
+    return olympianRepository.findAll();
   }
 }

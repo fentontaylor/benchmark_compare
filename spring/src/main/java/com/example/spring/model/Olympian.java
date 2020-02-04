@@ -1,9 +1,6 @@
 package com.example.spring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -12,21 +9,21 @@ import javax.validation.constraints.Size;
 @Table(name = "olympians")
 public class Olympian {
   @Id
-  @Column(name = "id")
-  Long id;
+  @Column(columnDefinition = "id")
+  public Long id;
 
-  @Column(name="name")
-  String name;
+  @Column(columnDefinition="name")
+  public String name;
 
-  @Column(name="sex")
-  String sex;
+  @Column(columnDefinition="sex")
+  public String sex;
 
-  @Column(name="age")
-  Integer age;
+  @Column(columnDefinition="age")
+  public Integer age;
 
-  @Column(name="height")
-  Integer height;
+  @Column(columnDefinition="height")
+  public Integer height;
 
-  @Column(name="weight")
-  Integer weight;
+  @Column(columnDefinition="weight")
+  public Integer weight;
 }
