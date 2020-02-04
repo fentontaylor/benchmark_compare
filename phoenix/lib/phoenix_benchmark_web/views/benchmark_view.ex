@@ -15,7 +15,7 @@ defmodule PhoenixBenchmarkWeb.BenchmarkView do
       sex: olympian.sex,
       age: olympian.age,
       height: olympian.height,
-      weight: olympian.weight,
+      weight: olympian.weight
       }
 	end  
 
