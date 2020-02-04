@@ -3,10 +3,10 @@ defmodule PhoenixBenchmarkWeb.BenchmarkController do
 	alias PhoenixBenchmark.Olympians.Olympians
 
 	def root(conn, _params) do
-		render conn, "root.json", data: %{message: "Hello, World!"}
+		json(conn, %{message: "Hello, World!"})
 	end
 
 	def olympians(conn, _params) do
-		render conn, "index.json", olympians: Olympians.all
+		json(conn, %{olympians: Olympians.all})
 	end
 end
