@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class Olympian {
   @Id
   @Column(columnDefinition = "id")
-  public Long id;
+  private Long id;
 
   @Column(columnDefinition="name")
   public String name;
