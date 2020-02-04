@@ -16,7 +16,8 @@ public class OlympianController {
   private OlympianRepository olympianRepository;
 
   @GetMapping("/api/v1/olympians")
-  public Page<Olympian> getOlympians() {
-    return olympianRepository.findAll();
+  public Page<Olympian> getOlympians(Pageable pageable) {
+    Pageable wholePage = Pageable.unpaged();
+    return olympianRepository.findAll(wholePage);
   }
 }
