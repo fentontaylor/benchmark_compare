@@ -31,7 +31,7 @@ The apache benchmark tool was used to send 10,000 requests to the APIs with a co
 #### 1a. Express
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -70,7 +70,7 @@ Percentage of the requests served within a certain time (ms)
 #### 1b. Express with GraphQL
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /api/v2/graphql?query=query%7Bmessage%7D
 Document Length:        36 bytes
@@ -109,7 +109,7 @@ Percentage of the requests served within a certain time (ms)
 #### 2. Sinatra
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -150,7 +150,7 @@ Percentage of the requests served within a certain time (ms)
 #### 3. Flask
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -189,7 +189,7 @@ Percentage of the requests served within a certain time (ms)
 #### 4. Django
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -228,7 +228,7 @@ Percentage of the requests served within a certain time (ms)
 #### 5. Rails API
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /
 Document Length:        27 bytes
@@ -263,8 +263,47 @@ Percentage of the requests served within a certain time (ms)
  100%    294 (longest request)
 ```
 </details>
- 
- 
+
+#### 6. Spring
+<details>
+  <summary>View Results</summary>
+
+```
+Document Path:          /
+Document Length:        27 bytes
+
+Concurrency Level:      1
+Time taken for tests:   7.998 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      1600000 bytes
+HTML transferred:       270000 bytes
+Requests per second:    1250.34 [#/sec] (mean)
+Time per request:       0.800 [ms] (mean)
+Time per request:       0.800 [ms] (mean, across all concurrent requests)
+Transfer rate:          195.37 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.2      0       1
+Processing:     0    0   0.2      0       9
+Waiting:        0    0   0.2      0       9
+Total:          0    1   0.3      1      10
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%     10 (longest request)
+```
+</details>
+
+
 ### /api/v1/olympians Endpoint
 The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/api/v1/olympians`. The path /api/v1/olympians returns an index of all 2863 Olympians from a PostgreSQL database in the following format:
 ```
@@ -294,7 +333,7 @@ The apache benchmark tool was used to send 10,000 requests to the APIs with a co
 #### 1a. Express
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /api/v1/olympians
 Document Length:        248795 bytes
@@ -333,7 +372,7 @@ Percentage of the requests served within a certain time (ms)
  #### 1b. Express with GraphQL
  <details>
   <summary>View Results</summary>
-  
+
  ```
 Document Path:          /api/v2/graphql?query=query%7Bolympians%7Bid%20name%20sex%20age%20height%20weight%7D%7D
 Document Length:        248804 bytes
@@ -368,11 +407,11 @@ Percentage of the requests served within a certain time (ms)
  100%    143 (longest request)
  ```
  </details>
- 
+
  #### Rails API
  <details>
   <summary>View Results</summary>
-  
+
  ```
  Document Path:          /api/v1/olympians
 Document Length:        243069 bytes
@@ -411,7 +450,7 @@ Percentage of the requests served within a certain time (ms)
 #### Flask
 <details>
   <summary>View Results</summary>
-  
+
 ```
 Document Path:          /api/v1/olympians
 Document Length:        243070 bytes
@@ -444,6 +483,44 @@ Percentage of the requests served within a certain time (ms)
   98%    131
   99%    141
  100%    535 (longest request)
-``` 
+```
 </details>
 
+#### Spring
+<details>
+  <summary>View Results</summary>
+
+```
+Document Path:          /api/v1/olympians
+Document Length:        243264 bytes
+
+Concurrency Level:      1
+Time taken for tests:   249.203 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2433690000 bytes
+HTML transferred:       2432640000 bytes
+Requests per second:    40.13 [#/sec] (mean)
+Time per request:       24.920 [ms] (mean)
+Time per request:       24.920 [ms] (mean, across all concurrent requests)
+Transfer rate:          9536.99 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       5
+Processing:    18   25   6.7     24     403
+Waiting:       14   20   6.2     20     387
+Total:         18   25   6.7     24     403
+
+Percentage of the requests served within a certain time (ms)
+  50%     24
+  66%     25
+  75%     25
+  80%     26
+  90%     28
+  95%     30
+  98%     33
+  99%     36
+ 100%    403 (longest request)
+```
+</details>
