@@ -6,7 +6,7 @@ defmodule PhoenixBenchmarkWeb.BenchmarkView do
 	end
   
 	def render("index.json", %{olympians: olympians}) do
-    render_many olympians, PhoenixBenchmarkWeb.BenchmarkView, "olympian.json", as: :olympian
+    %{olympians: render_many(olympians, PhoenixBenchmarkWeb.BenchmarkView, "olympian.json", as: :olympian)}
 	end
 
   def render("olympian.json", %{olympian: olympian}) do
