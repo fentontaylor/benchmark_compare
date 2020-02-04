@@ -8,5 +8,4 @@ defmodule PhoenixBenchmark.Olympians.Olympian do
 		field :height, :integer
 		field :weight, :integer
 	end
-
 end
