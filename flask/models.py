@@ -1,5 +1,6 @@
 from app import db, ma
 
+
 class Olympian(db.Model):
     __tablename__ = 'olympians'
     id = db.Column(db.Integer, primary_key=True)
