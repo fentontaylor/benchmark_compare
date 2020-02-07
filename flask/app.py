@@ -2,12 +2,13 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_marshmallow import Marshmallow
-import models
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
+import models
 
 
 @app.route('/')
