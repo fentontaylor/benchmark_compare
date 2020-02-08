@@ -451,6 +451,9 @@ Percentage of the requests served within a certain time (ms)
 <details>
   <summary>View Results</summary>
 
+<details>
+  <summary>With gunicorn/gevent (1 worker thread)</summary>
+
 ```
 Document Path:          /api/v1/olympians
 Document Length:        243070 bytes
@@ -484,6 +487,49 @@ Percentage of the requests served within a certain time (ms)
   99%    141
  100%    535 (longest request)
 ```
+</details>
+
+<details>
+  <summary>With gunicorn/gevent (15 worker threads)</summary>
+
+```
+Server Software:        gunicorn/20.0.4
+Server Hostname:        127.0.0.1
+Server Port:            8000
+
+Document Path:          /api/v1/olympians
+Document Length:        426309 bytes
+
+Concurrency Level:      10
+Time taken for tests:   645.868 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      4264650000 bytes
+HTML transferred:       4263090000 bytes
+Requests per second:    15.48 [#/sec] (mean)
+Time per request:       645.868 [ms] (mean)
+Time per request:       64.587 [ms] (mean, across all concurrent requests)
+Transfer rate:          6448.22 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:   192  645 103.6    621    2562
+Waiting:      192  644 103.5    620    2562
+Total:        192  645 103.6    621    2562
+
+Percentage of the requests served within a certain time (ms)
+  50%    621
+  66%    656
+  75%    684
+  80%    707
+  90%    775
+  95%    834
+  98%    919
+  99%    980
+ 100%   2562 (longest request)
+```
+</details>
 </details>
 
 #### Spring
