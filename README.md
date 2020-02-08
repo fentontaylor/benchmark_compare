@@ -303,6 +303,45 @@ Percentage of the requests served within a certain time (ms)
 ```
 </details>
 
+ #### 7. Go
+<details>
+  <summary>View Results</summary>
+
+```
+Document Path:          /
+Document Length:        26 bytes
+
+Concurrency Level:      1
+Time taken for tests:   5.623 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      1430000 bytes
+HTML transferred:       260000 bytes
+Requests per second:    1778.33 [#/sec] (mean)
+Time per request:       0.562 [ms] (mean)
+Time per request:       0.562 [ms] (mean, across all concurrent requests)
+Transfer rate:          248.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       2
+Processing:     0    0   0.7      0      51
+Waiting:        0    0   0.7      0      51
+Total:          0    0   0.7      0      51
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%     51 (longest request)
+```
+</details>
+
 ### /api/v1/olympians Endpoint
 The apache benchmark tool was used to send 10,000 requests to the APIs with a concurrency level of 1 (one request at a time). with the command `ab -n 10000 -c 1 http://<localhost:port>/api/v1/olympians`. The path /api/v1/olympians returns an index of all 2863 Olympians from a PostgreSQL database in the following format:
 ```
